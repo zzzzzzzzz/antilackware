@@ -1,7 +1,9 @@
-Antilackware is supposed to be a transient repository of slackbuilds. A slackbuild is the preferred way 
- for preparing software packages for Slackware Linux. See http://www.slackware.com for details 
- of this tremendous distribution.
+Antilackware is supposed to be a transient repository of slackbuilds.
+A slackbuild is the preferred way for preparing software packages for
+Slackware Linux.  See  http://www.slackware.com for details of this
+superb distribution.
 
-Slackware is known from avoiding so called 'dependency hell' simply by making the administrator 
-responsible for taking care of software dependencies. On the other hand this makes easy trimming down 
-and customising the system. 
+Slackware is known from avoiding so called 'dependency hell' simply by 
+making the administrator responsible for taking care of software
+dependencies.  On the other hand this makes trimming down and 
+customising the system somehow easier.
