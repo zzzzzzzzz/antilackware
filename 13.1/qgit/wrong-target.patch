@@ -1,0 +1,11 @@
+--- src/src.pro	2012-01-25 00:26:03.655774952 +0100
++++ src/src.pro.new	2012-01-25 00:26:56.419425280 +0100
+@@ -38,7 +38,7 @@
+ 
+ unix {
+     TARGET = qgit
+-    target.path = ~/bin
++    target.path = /usr/bin
+     CONFIG += x11
+ }
+ 
