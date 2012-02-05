@@ -1,0 +1,11 @@
+veusz: A scientific plotting package
+veusz:
+veusz: Veusz is a scientific plotting package, designed to create
+veusz: publication-ready Postscript, PDF and SVG output. It features GUI,
+veusz: command-line, and scripting interfaces. Graphs are constructed from
+veusz: "widgets", allowing complex layouts to be designed. Veusz supports
+veusz: plotting functions, data with errors, keys, labels, stacked plots,
+veusz: multiple plots, and fitting data. 
+veusz: License:   GPL
+veusz: Home-page: http://home.gna.org/veusz/
+veusz: Requires:  NumPy(SBo), PyQt
