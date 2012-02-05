@@ -1,3 +1,6 @@
 - more scripts...
-- add PDL dependencies
 - fix/add license
+- PDL
+ * add dependencies
+ * correct ARCH handling
+
