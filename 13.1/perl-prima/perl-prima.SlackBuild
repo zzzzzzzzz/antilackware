@@ -5,8 +5,8 @@
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
 PRGNAM=perl-prima
-VERSION=${VERSION:-1.32}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-1.33}
+BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
 SRCNAM=Prima
