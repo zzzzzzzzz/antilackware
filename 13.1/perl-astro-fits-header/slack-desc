@@ -1,0 +1,11 @@
+perl-astro-fits-header: Astro::FITS::Header
+perl-astro-fits-header: 
+perl-astro-fits-header: Astro::FITS::Header and associated sub-classes are tools for reading,
+perl-astro-fits-header: modifying and then writing out FITS standard header blocks to FITS, NDF
+perl-astro-fits-header: and GSD files. The module now fully supports ESO HIERARCH header keywords.
+perl-astro-fits-header: Support for instantiating Astro::FITS:Header objects from Starlink::AST
+perl-astro-fits-header: FrameSet objects is also supported.
+perl-astro-fits-header: 
+perl-astro-fits-header: Astro::FITS::Header is currently  maintained by Alasdair Allan 
+perl-astro-fits-header: <aa@astro.ex.ac.uk>
+perl-astro-fits-header: 
