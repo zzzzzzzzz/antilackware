@@ -1,5 +1,3 @@
 - more scripts...
-- fix/add license
-- PDL
- * add dependencies: Convert::UU  Astro::FITS::Header
- * correct ARCH handling
+- fix/add license info
+- correct ARCH handling
