@@ -1,3 +1,5 @@
 - more scripts...
 - fix/add license info
 - correct ARCH handling (-march and -mtune, too)
+- clean-up of the repository
+- double-check readiness for 14.0
