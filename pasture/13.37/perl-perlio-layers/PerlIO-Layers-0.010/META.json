@@ -1,0 +1,63 @@
+{
+   "abstract" : "Querying your filehandle's capabilities",
+   "author" : [
+      "Leon Timmermans <fawaka@gmail.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300007, CPAN::Meta::Converter version 2.120351",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "PerlIO-Layers",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Carp" : "0",
+            "Exporter" : "5.57",
+            "List::MoreUtils" : "0",
+            "List::Util" : "0",
+            "PerlIO" : "0",
+            "XSLoader" : "0",
+            "perl" : "5.008_001",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Data::Dumper" : "0",
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0.82"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-perlio-layers at rt.cpan.org",
+         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=PerlIO-Layers"
+      },
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/Leont/perlio-layers.git",
+         "web" : "http://github.com/Leont/perlio-layers"
+      }
+   },
+   "version" : "0.010"
+}
+

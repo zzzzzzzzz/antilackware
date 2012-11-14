@@ -1,0 +1,11 @@
+perl-extutils-f77: ExtUtils::F77
+perl-extutils-f77: 
+perl-extutils-f77: This module tries to figure out how to link C programs
+perl-extutils-f77: with Fortran subroutines on your system. Basically
+perl-extutils-f77: one must add a list of Fortran runtime libraries. The
+perl-extutils-f77: problem is their location and name varies with each
+perl-extutils-f77: OS/compiler combination!
+perl-extutils-f77: 
+perl-extutils-f77: 
+perl-extutils-f77: 
+perl-extutils-f77: 
