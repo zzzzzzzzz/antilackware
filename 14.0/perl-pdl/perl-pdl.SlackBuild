@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Slackware build script for Prima GUI
+# Slackware build script for PDL (Perl Data Language)
 
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
-PRGNAM=perl-prima
-VERSION=${VERSION:-1.36}
-BUILD=${BUILD:-1}
+PRGNAM=perl-pdl
+VERSION=${VERSION:-2.4.11}
+BUILD=${BUILD:-2}
 TAG=${TAG:-zzz}
 
-SRCNAM=Prima
+SRCNAM=PDL
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -52,11 +52,14 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMAN3DIR=/usr/man/man3
-
+perl Makefile.PL INSTALLDIRS=vendor INSTALLVENDORMAN1DIR=/usr/man INSTALLVENDORMAN3DIR=/usr/man
 make
-# make test
+make test
 make install DESTDIR=$PKG
+
+#find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+#  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+#
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
@@ -64,8 +67,9 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -ar \
-  Copying HISTORY README examples/ \
+cp -a \
+  Changes Known_problems Release_Notes TODO README \
+  DEPENDENCIES DEVELOPMENT INTERNATIONALIZATION BUGS COPYING \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

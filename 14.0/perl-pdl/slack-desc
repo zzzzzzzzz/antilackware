@@ -1,0 +1,11 @@
+perl-pdl: PDL (Perl Data Language)
+perl-pdl:
+perl-pdl: PDL aims to turn perl into an efficient numerical language for 
+perl-pdl: scientific computing.  The PDL module gives standard perl 
+perl-pdl: the ability to COMPACTLY store and SPEEDILY manipulate 
+perl-pdl: the large N-dimensional data sets which are the bread and butter of 
+perl-pdl: scientific computing.  The aim is to provide tons of useful 
+perl-pdl: functionality for scientific and numeric analysis.
+perl-pdl:
+perl-pdl: Check the PDL web site at http://pdl.perl.org for more information.
+perl-pdl:

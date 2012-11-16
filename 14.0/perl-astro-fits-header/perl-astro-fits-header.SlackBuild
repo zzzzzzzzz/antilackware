@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Slackware build script for Prima GUI
+# Slackware build script for Astro::FITS::Header 
 
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
-PRGNAM=perl-prima
-VERSION=${VERSION:-1.36}
-BUILD=${BUILD:-1}
+PRGNAM=perl-astro-fits-header
+VERSION=${VERSION:-3.07}
+BUILD=${BUILD:-2}
 TAG=${TAG:-zzz}
 
-SRCNAM=Prima
+SRCNAM=Astro-FITS-Header
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -52,20 +52,21 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMAN3DIR=/usr/man/man3
+perl Build.PL --installdirs vendor --installvendorman3dir /usr/man
+perl Build
+perl Build test 
+perl Build install --destdir $PKG
 
-make
-# make test
-make install DESTDIR=$PKG
-
+mv $PKG/usr/share/man/*  $PKG/usr/man/
+rm -rfv $PKG/usr/share/man $PKG/usr/lib
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -ar \
-  Copying HISTORY README examples/ \
+cp -a \
+  README TODO \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

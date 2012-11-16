@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Slackware build script for Prima GUI
+# Slackware build script for Convert::UU
 
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
-PRGNAM=perl-prima
-VERSION=${VERSION:-1.36}
+PRGNAM=perl-const-fast
+VERSION=${VERSION:-0.013}
 BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
-SRCNAM=Prima
+SRCNAM=Const-Fast
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -53,19 +53,20 @@ find . \
  -exec chmod 644 {} \;
 
 perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMAN3DIR=/usr/man/man3
-
 make
-# make test
+make test
 make install DESTDIR=$PKG
 
+# mv $PKG/usr/share/man/*  $PKG/usr/man/
+# rm -rf $PKG/usr/share/man/
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -ar \
-  Copying HISTORY README examples/ \
+cp -a \
+  Changes INSTALL LICENSE README \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

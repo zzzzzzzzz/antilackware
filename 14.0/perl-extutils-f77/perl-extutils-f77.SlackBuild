@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Slackware build script for Prima GUI
+# Slackware build script for ExtUtils::F77
 
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
-PRGNAM=perl-prima
-VERSION=${VERSION:-1.36}
-BUILD=${BUILD:-1}
+PRGNAM=perl-extutils-f77
+VERSION=${VERSION:-1.17}
+BUILD=${BUILD:-2}
 TAG=${TAG:-zzz}
 
-SRCNAM=Prima
+SRCNAM=ExtUtils-F77
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -53,10 +53,13 @@ find . \
  -exec chmod 644 {} \;
 
 perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMAN3DIR=/usr/man/man3
-
 make
-# make test
+make test
 make install DESTDIR=$PKG
+
+#find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+#  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+#
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
@@ -64,8 +67,8 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -ar \
-  Copying HISTORY README examples/ \
+cp -a \
+  CHANGES COPYING README \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
