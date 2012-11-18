@@ -1,0 +1,11 @@
+FANN: Fast Artificial Neural Network Library (FANN)
+FANN: 
+FANN: Fast Artificial Neural Network Library is a free open source neural network 
+FANN: library, which implements multilayer artificial neural networks in C with 
+FANN: support for both fully connected and sparsely connected networks. 
+FANN: Cross-platform execution in both fixed and floating point are supported. 
+FANN: It includes a framework for easy handling of training data sets. It is easy to 
+FANN: use, versatile and fast. Bindings to more than 15 programming languages are 
+FANN: available. An easy to read introduction article and a reference manual accompanies 
+FANN: the library with examples and recommendations on how to use the library. 
+FANN:
