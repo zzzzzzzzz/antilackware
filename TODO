@@ -2,6 +2,7 @@
 - fix/add license info
 - correct ARCH handling (-march and -mtune, too)
 - clean-up of the repository
+- validate packaging scripts for 14.0
 - add pkg: GNU Stow 2.2.0
 		see http://www.gnu.org/software/stow/stow.html 
 		and http://search.cpan.org/~aspiers/Stow-v2.2.0/
@@ -12,5 +13,4 @@
 - add dmd2
 		see http://d-programming-language.org
 		and https://github.com/D-Programming-Language/dmd
-- double-check readiness for 14.0
 - merge in my perl configs
