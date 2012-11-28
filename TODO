@@ -3,3 +3,13 @@
 - correct ARCH handling (-march and -mtune, too)
 - clean-up of the repository
 - double-check readiness for 14.0
+- add pkg: GNU Stow 2.2.0
+		see http://www.gnu.org/software/stow/stow.html 
+		and http://search.cpan.org/~aspiers/Stow-v2.2.0/
+- add pkg: mr
+		see http://joeyh.name/code/mr/ 
+		and git://git.kitenet.net/mr
+		and http://git.kitenet.net/?p=mr.git
+- add dmd2
+		see http://d-programming-language.org
+		and https://github.com/D-Programming-Language/dmd
