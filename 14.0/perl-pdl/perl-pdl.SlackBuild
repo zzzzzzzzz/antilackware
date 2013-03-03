@@ -6,7 +6,7 @@
 
 PRGNAM=perl-pdl
 VERSION=${VERSION:-2.4.11}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-zzz}
 
 SRCNAM=PDL
@@ -52,6 +52,9 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+if [ -f /usr/bin/g77 ]; then
+    export F77LIBS=' -lgfortran '
+fi
 perl Makefile.PL INSTALLDIRS=vendor INSTALLVENDORMAN1DIR=/usr/man INSTALLVENDORMAN3DIR=/usr/man
 make
 make test
