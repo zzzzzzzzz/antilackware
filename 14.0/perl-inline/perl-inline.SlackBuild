@@ -5,7 +5,7 @@
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
 PRGNAM=perl-inline
-VERSION=${VERSION:-0.52}
+VERSION=${VERSION:-0.53}
 BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
@@ -54,7 +54,7 @@ find . \
 
 yes | perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMAN3DIR=/usr/man/man3
 make
-make test
+## test prereqs ... ##
 make install DESTDIR=$PKG
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
