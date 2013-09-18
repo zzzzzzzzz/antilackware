@@ -5,7 +5,7 @@
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
 PRGNAM=perl-module-build-tiny
-VERSION=${VERSION:-0.026}
+VERSION=${VERSION:-0.027}
 BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
