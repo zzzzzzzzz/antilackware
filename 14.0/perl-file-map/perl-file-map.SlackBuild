@@ -5,7 +5,7 @@
 # Written by (Janusz J. Maczka) (bug5lay4r at gmail com)
 
 PRGNAM=perl-file-map
-VERSION=${VERSION:-0.53}
+VERSION=${VERSION:-0.60}
 BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
@@ -52,7 +52,7 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-perl Build.PL --prefix /usr --installdirs vendor --installvendorman3dir /usr/man/man3
+perl Build.PL --installdirs vendor --installvendorman3dir /usr/man/man3
 perl Build
 perl Build test 
 perl Build install --destdir $PKG
