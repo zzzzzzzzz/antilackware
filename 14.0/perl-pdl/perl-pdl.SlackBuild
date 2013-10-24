@@ -6,7 +6,7 @@
 
 PRGNAM=perl-pdl
 # note new naming scheme
-VERSION=${VERSION:-2.006}
+VERSION=${VERSION:-2.007}
 BUILD=${BUILD:-1}
 TAG=${TAG:-zzz}
 
@@ -56,7 +56,8 @@ find . \
 if [ -f /usr/bin/g77 ]; then
     export F77LIBS=' -lgfortran '
 fi
-perl Makefile.PL INSTALLDIRS=vendor INSTALLVENDORMAN1DIR=/usr/man INSTALLVENDORMAN3DIR=/usr/man
+
+perl Makefile.PL PREFIX=/usr INSTALLDIRS=vendor INSTALLVENDORMANDIR=/usr/man
 make
 make test
 make install DESTDIR=$PKG
@@ -64,15 +65,15 @@ make install DESTDIR=$PKG
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+find $PKG/usr/share/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/share/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 find $PKG -name perllocal.pod -o -name ".packlist" -o -name "*.bs" | xargs rm -f || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
   Changes Known_problems Release_Notes TODO README \
-  DEPENDENCIES DEVELOPMENT INTERNATIONALIZATION BUGS COPYING \
+  DEPENDENCIES DEVELOPMENT INTERNATIONALIZATION COPYING \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
