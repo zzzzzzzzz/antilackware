@@ -1,0 +1,10 @@
+libonion: libonion (Onion http server library)
+libonion: 
+libonion: Onion is supposed to be a lightweight C library to facilitate creation
+libonion:  of simple HTTP servers. 
+libonion: 
+libonion: The use case is an existing application, or a new one, that needs
+libonion: some HTTP interconnection with the world. 
+libonion: 
+libonion: created by David Moreno
+libonion: 
